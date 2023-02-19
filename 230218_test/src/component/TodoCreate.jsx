@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import styled from "styled-components";
 import { useTodoDispatch } from "../context/todos";
 
 function TodoCreate() {
@@ -17,11 +18,27 @@ function TodoCreate() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleText} value={text} />
-        <button>등록</button>
+        <input
+          style={{ width: "360px" }}
+          type="text"
+          onChange={handleText}
+          value={text}
+        />
+        <br />
+        <br />
+        <Button style={{ width: "50px" }}>등록</Button>
       </form>
     </div>
   );
 }
+
+const Button = styled.button`
+  background: pink;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  padding: 3px 7px;
+  margin-left: 130px;
+`;
 
 export default React.memo(TodoCreate);

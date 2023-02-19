@@ -1,4 +1,5 @@
 import React, { useMemo, useReducer } from "react";
+import styled from "styled-components";
 import { useTodoDispatch, useTodoState } from "../context/todos";
 
 function countUndoneTodo(todos) {
@@ -13,8 +14,9 @@ function TodoList() {
   }, [todos]);
 
   return (
-    <div>
-      해야할일 : {undoneCount}
+    <div style={{}}>
+      <br />
+      해야할 일 : {undoneCount}
       <ul>
         {todos.map((todo) => (
           <TodoItem todo={todo} />
@@ -47,5 +49,3 @@ function TodoItem({ todo }) {
 }
 
 export default React.memo(TodoList);
-
-
